@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Introdcution](introduction/README.md)
+* [Introduction](introduction/README.md)
   * [About Planetmint](introduction/about-planetmint.md)
   * [Properties of Planetmint](introduction/properties.md)
   * [Quickstart](introduction/quickstart.md)
