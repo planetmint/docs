@@ -2,7 +2,7 @@
 
 * [Planetmint](README.md)
 * [Introduction](introduction/README.md)
-  * [About Planetmint](introduction/about-planetmint.md)
+  * [What is Planetmint?](introduction/about-planetmint.md)
   * [Properties of Planetmint](introduction/properties.md)
   * [Quickstart](introduction/quickstart.md)
 * [Using Planetmint](using-planetmint/README.md)

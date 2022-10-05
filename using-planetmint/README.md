@@ -1,3 +1,10 @@
+---
+description: >-
+  In this section, we will explore the different kinds of transactions available
+  on Planetmint, as well as the role of cryptoconditions and contracts and its
+  integration into Planetmint.
+---
+
 # Using Planetmint
 
 ## Transactions in Planetmint
