@@ -4,7 +4,7 @@ Planetmint is a metadata blockchain. This introduction gives an overview of how 
 
 In this section, we will take a deeper look at Planetmint, its properties and how you can get started with installation and setup.
 
-Table of Contents
+### Table of Contents
 
 * [What is Planetmint? ](about-planetmint.md)
   * [Basic Facts](about-planetmint.md#basic-facts)
