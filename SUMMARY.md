@@ -5,6 +5,7 @@
   * [About Planetmint](introduction/about-planetmint.md)
   * [Properties of Planetmint](introduction/properties.md)
   * [Quickstart](introduction/quickstart.md)
+* [Using Planetmint](using-planetmint/README.md)
 * [Networks & Federations](network-setup/README.md)
   * [How to Set Up a Planetmint Network](network-setup/network-setup.md)
   * [Planetmint Networks](network-setup/networks.md)
@@ -23,4 +24,3 @@
     * [Production Node Requirements](node-setup/production-node/node-requirements.md)
     * [Production Node Security & Privacy](node-setup/production-node/node-security-and-privacy.md)
     * [Using a Reverse Proxy](node-setup/production-node/reverse-proxy-notes.md)
-* [Basic usage](using-planetmint/README.md)
