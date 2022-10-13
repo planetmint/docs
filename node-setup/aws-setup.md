@@ -1,36 +1,36 @@
-
+---
+description: Before you can deploy anything on AWS, you must do a few things.
+---
 
 # Basic AWS Setup
-
-Before you can deploy anything on AWS, you must do a few things.
 
 ## Get an AWS Account
 
 If you don't already have an AWS account, you can [sign up for one for free at aws.amazon.com](https://aws.amazon.com/).
 
-## Install the AWS Command-Line Interface
+## Install the AWS Command Line Interface
 
-To install the AWS Command-Line Interface (CLI), just do:
+To install the AWS Command Line Interface (CLI), do the following:
 
-```text
+```
 pip install awscli
 ```
 
 ## Create an AWS Access Key
 
-The next thing you'll need is AWS access keys (access key ID and secret access key). If you don't have those, see [the AWS documentation about access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
+Next, you will need AWS access keys (access key ID and secret access key). If you don’t have those, see [the AWS documentation about access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
 
-You should also pick a default AWS region name (e.g. `eu-central-1`). The AWS documentation has [a list of them](http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region).
+You should also pick a default AWS region name (e.g. `eu-central-1`). The AWS documentation has [a list of them](http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2\_region).
 
-Once you've got your AWS access key, and you've picked a default AWS region name, go to a terminal session and enter:
+Once you’ve got your AWS access key and you’ve picked a default AWS region name, go to a terminal session and enter:
 
-```text
+```
 aws configure
 ```
 
 and answer the four questions. For example:
 
-```text
+```
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
 AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 Default region name [None]: eu-central-1
@@ -41,15 +41,15 @@ This writes two files: `~/.aws/credentials` and `~/.aws/config`. AWS tools and p
 
 ## Generate an RSA Key Pair for SSH
 
-Eventually, you'll have one or more instances (virtual machines) running on AWS and you'll want to SSH to them. To do that, you need a public/private key pair. The public key will be sent to AWS, and you can tell AWS to put it in any instances you provision there. You'll keep the private key on your local workstation.
+Eventually, you’ll have one or more instances (virtual machines) running on AWS and want to SSH to them. To do that, you need a public/private key pair. The public key will be sent to AWS; you can tell AWS to put it in any instances you provision there. You will keep the private key on your local workstation.
 
-See the appendix [page about how to generate a key pair for SSH](../references/appendices/generate-key-pair-for-ssh).
+See the appendix [page about how to generate a key pair for SSH](https://docs.planetmint.io/en/latest/appendices/generate-key-pair-for-ssh.html).
 
 ## Send the Public Key to AWS
 
-To send the public key to AWS, use the AWS Command-Line Interface:
+To send the public key to AWS, use the AWS Command Line Interface:
 
-```text
+```
 aws ec2 import-key-pair \
 --key-name "<key-name>" \
 --public-key-material file://~/.ssh/<key-name>.pub
