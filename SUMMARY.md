@@ -6,10 +6,10 @@
   * [Properties of Planetmint](introduction/properties.md)
   * [Quickstart](introduction/quickstart.md)
 * [Using Planetmint](using-planetmint/README.md)
-  * [Transactions in Planetmint](using-planetmint/README.md#transactions-in-planetmint)
-  * [A Note on IPLD marshalling and CIDs](using-planetmint/README.md#a-note-on-ipld-marshalling-and-cids)
-  * [Contracts & Conditions](using-planetmint/README.md#contracts--conditions)
-  * [Zenroom Smart Contracts and Policies](using-planetmint/README.md#zenroom-smart-contracts-and-policies)
+  *
+  *
+  *
+  *
 * [Networks & Federations](network-setup/README.md)
   * [How to Set Up a Planetmint Network](network-setup/network-setup.md)
   * [Planetmint Networks](network-setup/networks.md)
