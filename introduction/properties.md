@@ -1,5 +1,3 @@
-
-
 # Properties of Planetmint
 
 ## Decentralization
@@ -20,36 +18,33 @@ It’s worth noting that not even the admin or superuser of a node can transfer 
 
 ## Byzantine Fault Tolerance
 
-[Tendermint](https://www.tendermint.com/) is used for consensus and transaction replication,
-and Tendermint is [Byzantine Fault Tolerant (BFT)](https://en.wikipedia.org/wiki/Byzantine_fault_tolerance).
+[Tendermint](https://www.tendermint.com/) is used for consensus and transaction replication, and Tendermint is [Byzantine Fault Tolerant (BFT)](https://en.wikipedia.org/wiki/Byzantine\_fault\_tolerance).
 
 ## Node Diversity
 
 Steps should be taken to make it difficult for any one actor or event to control or damage “enough” of the nodes. (Because Planetmint Server uses Tendermint, "enough" is ⅓.) There are many kinds of diversity to consider, listed below. It may be quite difficult to have high diversity of all kinds.
 
 1. **Jurisdictional diversity.** The nodes should be controlled by entities within multiple legal jurisdictions, so that it becomes difficult to use legal means to compel enough of them to do something.
-1. **Geographic diversity.** The servers should be physically located at multiple geographic locations, so that it becomes difficult for a natural disaster (such as a flood or earthquake) to damage enough of them to cause problems.
-1. **Hosting diversity.** The servers should be hosted by multiple hosting providers (e.g. Amazon Web Services, Microsoft Azure, Digital Ocean, Rackspace), so that it becomes difficult for one hosting provider to influence enough of the nodes.
-1. **Diversity in general.** In general, membership diversity (of all kinds) confers many advantages on a consortium. For example, it provides the consortium with a source of various ideas for addressing challenges.
+2. **Geographic diversity.** The servers should be physically located at multiple geographic locations, so that it becomes difficult for a natural disaster (such as a flood or earthquake) to damage enough of them to cause problems.
+3. **Hosting diversity.** The servers should be hosted by multiple hosting providers (e.g. Amazon Web Services, Microsoft Azure, Digital Ocean, Rackspace), so that it becomes difficult for one hosting provider to influence enough of the nodes.
+4. **Diversity in general.** In general, membership diversity (of all kinds) confers many advantages on a consortium. For example, it provides the consortium with a source of various ideas for addressing challenges.
 
-Note: If all the nodes are running the same code, i.e. the same implementation of Planetmint, then a bug in that code could be used to compromise all of the nodes. Ideally, there would be several different, well-maintained implementations of Planetmint Server (e.g. one in Python, one in Go, etc.), so that a consortium could also have a diversity of server implementations. Similar remarks can be made about the operating system.
+**Note:** If all the nodes are running the same code, i.e. the same implementation of Planetmint, then a bug in that code could be used to compromise all of the nodes. Ideally, there would be several different, well-maintained implementations of Planetmint Server (e.g. one in Python, one in Go, etc.), so that a consortium could also have a diversity of server implementations. Similar remarks can be made about the operating system.
 
 ## Immutability
 
 The blockchain community often describes blockchains as “immutable.” If we interpret that word literally, it means that blockchain data is unchangeable or permanent, which is absurd. The data _can_ be changed. For example, a plague might drive humanity extinct; the data would then get corrupted over time due to water damage, thermal noise, and the general increase of entropy.
 
-It’s true that blockchain data is more difficult to change (or delete) than usual. It's more than just "tamper-resistant" (which implies intent), blockchain data also resists random changes that can happen without any intent, such as data corruption on a hard drive. Therefore, in the context of blockchains, we interpret the word “immutable” to mean *practically* immutable, for all intents and purposes. (Linguists would say that the word “immutable” is a _term of art_ in the blockchain community.)
+It’s true that blockchain data is more difficult to change (or delete) than usual. It's more than just "tamper-resistant" (which implies intent), blockchain data also resists random changes that can happen without any intent, such as data corruption on a hard drive. Therefore, in the context of blockchains, we interpret the word “immutable” to mean _practically_ immutable, for all intents and purposes. (Linguists would say that the word “immutable” is a _term of art_ in the blockchain community.)
 
 Blockchain data can be made immutable in several ways:
 
 1. **No APIs for changing or deleting data.** Blockchain software usually doesn't expose any APIs for changing or deleting the data stored in the blockchain. Planetmint has no such APIs. This doesn't prevent changes or deletions from happening in _other_ ways; it's just one line of defense.
-1. **Replication.** All data is replicated (copied) to several different places. The higher the replication factor, the more difficult it becomes to change or delete all replicas.
-1. **Internal watchdogs.** All nodes monitor all changes and if some unallowed change happens, then appropriate action can be taken.
-1. **External watchdogs.** A consortium may opt to have trusted third-parties to monitor and audit their data, looking for irregularities. For a consortium with publicly-readable data, the public can act as an auditor.
-1. **Economic incentives.** Some blockchain systems make it very expensive to change old stored data. Examples include proof-of-work and proof-of-stake systems. Planetmint doesn't use explicit incentives like those.
-1. Data can be stored using fancy techniques, such as error-correction codes, to make some kinds of changes easier to undo.
-1. **Cryptographic signatures** are often used as a way to check if messages (e.g. transactions) have been tampered with enroute, and as a way to verify who signed the messages. In Planetmint, each transaction must be signed by one or more parties.
-1. **Full or partial backups** may be recorded from time to time, possibly on magnetic tape storage, other blockchains, printouts, etc.
-1. **Strong security.** Node owners can adopt and enforce strong security policies.
-
-
+2. **Replication.** All data is replicated (copied) to several different places. The higher the replication factor, the more difficult it becomes to change or delete all replicas.
+3. **Internal watchdogs.** All nodes monitor all changes and if some unallowed change happens, then appropriate action can be taken.
+4. **External watchdogs.** A consortium may opt to have trusted third-parties to monitor and audit their data, looking for irregularities. For a consortium with publicly-readable data, the public can act as an auditor.
+5. **Economic incentives.** Some blockchain systems make it very expensive to change old stored data. Examples include proof-of-work and proof-of-stake systems. Planetmint doesn't use explicit incentives like those.
+6. Data can be stored using fancy techniques, such as error-correction codes, to make some kinds of changes easier to undo.
+7. **Cryptographic signatures** are often used as a way to check if messages (e.g. transactions) have been tampered with enroute, and as a way to verify who signed the messages. In Planetmint, each transaction must be signed by one or more parties.
+8. **Full or partial backups** may be recorded from time to time, possibly on magnetic tape storage, other blockchains, printouts, etc.
+9. **Strong security.** Node owners can adopt and enforce strong security policies.

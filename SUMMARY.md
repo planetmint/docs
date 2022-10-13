@@ -11,7 +11,8 @@
   *
   *
 * [Node Setup](node-setup/README.md)
-  * [Basic AWS Setup](node-setup/aws-setup.md)
+  * [Basic AWS Setup](node-setup/aws-setup/README.md)
+    * [Run Planetmint with all-in-one Docker](node-setup/aws-setup/run-planetmint-with-all-in-one-docker.md)
 * [Networks & Federations](network-setup/README.md)
   * [How to Set Up a Planetmint Network](network-setup/network-setup.md)
   * [Planetmint Networks](network-setup/networks.md)
