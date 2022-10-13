@@ -10,13 +10,9 @@
   *
   *
   *
-* [Networks & Federations](network-setup/README.md)
-  * [How to Set Up a Planetmint Network](network-setup/network-setup.md)
-  * [Planetmint Networks](network-setup/networks.md)
-  * [Kubernetes Deployment Template](network-setup/k8s-deployment-template/README.md)
-* [Node setup](node-setup/README.md)
-  * [Run Planetmint with all-in-one Docker](node-setup/all-in-one-planetmint.md)
+* [Node Setup](node-setup/README.md)
   * [Basic AWS Setup](node-setup/aws-setup.md)
+  * [Run Planetmint with all-in-one Docker](node-setup/all-in-one-planetmint.md)
   * [Configuration Settings](node-setup/configuration.md)
   * [Deploy a Machine for Your Planetmint Node](node-setup/deploy-a-machine.md)
   * [Setting up a network of nodes with the Ansible script](node-setup/planetmint-node-ansible.md)
@@ -28,3 +24,7 @@
     * [Production Node Requirements](node-setup/production-node/node-requirements.md)
     * [Production Node Security & Privacy](node-setup/production-node/node-security-and-privacy.md)
     * [Using a Reverse Proxy](node-setup/production-node/reverse-proxy-notes.md)
+* [Networks & Federations](network-setup/README.md)
+  * [How to Set Up a Planetmint Network](network-setup/network-setup.md)
+  * [Planetmint Networks](network-setup/networks.md)
+  * [Kubernetes Deployment Template](network-setup/k8s-deployment-template/README.md)
