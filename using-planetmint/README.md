@@ -18,6 +18,25 @@ There are two kinds:
 
 You can view the transaction specifications on [Github](https://github.com/bigchaindb/BEPs/tree/master/13/), which describe transaction components and the conditions they must fulfil to be valid.
 
+### Transaction v3.0
+
+Planetmint migrated to transaction scheme version 3.0. \
+Details can be found at the [GitHub Transaction Repository](https://github.com/planetmint/transactions/tree/main/transactions/common/schema). The changes are as follows:\
+
+
+* `asset` has been migrated to `assets`
+* `assets` contains an array of asset descriptions instead of 1 asset description
+* The `data` attribute of the an asset description contains a [CID](./#a-note-on-ipld-marshalling-and-cids)
+* `metadata` attribute of the transaction contains a [CID](./#a-note-on-ipld-marshalling-and-cids)
+
+Below is an tabular overview about the changes.\
+
+
+|            | Version 2.0                                                                                                                       | Version 3.0                                                                                                                                                                                                                            |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `assets`   | <p><code>asset</code> contains a data JSON object and/or an ID string.<br><code>"asset": { "data" : {...}, "id" : "" }</code></p> | <p><code>assets</code> contains a list of assets desriptons with each data attribute being a <a href="./#a-note-on-ipld-marshalling-and-cids">CID</a>.<br><code>"assets": [{ "data" : &#x3C;CID>, "id" : "" }, {...}, ... ]</code></p> |
+| `metadata` | <p>Metadata contained a json object. <br><code>"metadata": {...}</code></p>                                                       | <p>Metadata contains a <a href="./#a-note-on-ipld-marshalling-and-cids">CID</a><br><code>"metadata": &#x3C;CID></code></p>                                                                                                             |
+
 ### CREATE Transactions
 
 A CREATE transaction can be used to register, issue, create or otherwise initiate the history of a single thing (or asset) in Planetmint. For example, one might register an identity or a creative work. The items are often called “assets”, but they might not be literal assets.
@@ -70,6 +89,10 @@ Digest (Hex): C3C4733EC8AFFD06CF9E9FF50FFC6BCD2EC85A6170004BB709669C31DE94391A
 ```
 
 With this information we can validate that information about an asset we've received is actually valid.
+
+The changes from version v2.0 on are as follows:
+
+
 
 ### Example Transactions
 
