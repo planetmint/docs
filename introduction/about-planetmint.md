@@ -1,6 +1,4 @@
-
-
-# About Planetmint
+# What is Planetmint?
 
 ## Basic Facts
 
@@ -13,8 +11,6 @@
 7. Everyone given access to a node via the Planetmint HTTP API can find and read all the data stored by Planetmint. The list of people with access might be quite short.
 8. If the connection between an external user and a Planetmint node isn’t encrypted (using HTTPS, for example), then a wiretapper can read all HTTP requests and responses in transit.
 9. If someone gets access to plaintext (regardless of where they got it), then they can (in principle) share it with the whole world. One can make it difficult for them to do that, e.g. if it is a lot of data and they only get access inside a secure room where they are searched as they leave the room.
-
-
 
 ## Planetmint for Asset Registrations & Transfers
 
@@ -32,13 +28,11 @@ Planetmint can store data of any kind, but it’s designed to be particularly go
 
 We used the word “owners” somewhat loosely above. A more accurate word might be fulfillers, signers, controllers, or transfer-enablers. See the section titled **A Note about Owners** in the relevant [Planetmint Transactions Spec](https://github.com/Planetmint/PRPs/tree/master/tx-specs/).
 
-
 ## Production-Ready?
 
 Depending on your use case, Planetmint may or may not be production-ready. You should ask your service provider. If you want to go live (into production) with Planetmint, please consult with your service provider.
 
 Note: Planetmint has an open source license with a “no warranty” section that is typical of open source licenses. This is standard in the software industry. For example, the Linux kernel is used in production by billions of machines even though its license includes a “no warranty” section. Warranties are usually provided above the level of the software license, by service providers.
-
 
 ## Storing Private Data Off-Chain
 
@@ -47,7 +41,7 @@ A system could store data off-chain, e.g. in a third-party database, document st
 * Keep track of who has read permissions (or other permissions) in a third-party system. An example of how this could be done is described below.
 * Keep a permanent record of all requests made to the third-party system.
 * Store hashes of documents-stored-elsewhere, so that a change in any document can be detected.
-* Record all handshake-establishing requests and responses between two off-chain parties (e.g. a Diffie-Hellman key exchange), so as to prove that they established an encrypted tunnel (without giving readers access to that tunnel). There are more details about this idea in [the Privacy Protocols repository](https://github.com/Planetmint/privacy-protocols).
+* Record all handshake-establishing requests and responses between two off-chain parties (e.g. a Diffie-Hellman key exchange), so as to prove that they established an encrypted tunnel (without giving readers access to that tunnel). There are more details about this idea in [the Privacy Protocols repository](https://github.com/Bigchaindb/privacy-protocols).
 
 A simple way to record who has read permission on a particular document would be for the third-party system (“DocPile”) to store a CREATE transaction in a Planetmint network for every document+user pair, to indicate that that user has read permissions for that document. The transaction could be signed by DocPile (or maybe by a document owner, as a variation). The asset data field would contain 1) the unique ID of the user and 2) the unique ID of the document. The one output on the CREATE transaction would only be transferable/spendable by DocPile (or, again, a document owner).
 
@@ -73,7 +67,7 @@ Please note:
 * If someone (or some group) publishes how to decrypt some encrypted data on-chain, then anyone with access to that encrypted data will be able to get the plaintext. The data can’t be deleted.
 * Encrypted data can’t be indexed or searched by MongoDB. (It can index and search the ciphertext, but that’s not very useful.) One might use homomorphic encryption to index and search encrypted data, but MongoDB doesn’t have any plans to support that any time soon. If there is indexing or keyword search needed, then some fields of the `asset.data` or `metadata` objects can be left as plain text and the sensitive information can be stored in an encrypted child-object.
 
-## Examples 
+## Examples
 
 ### System Example 1
 
@@ -94,13 +88,11 @@ This example uses [proxy re-encryption](https://en.wikipedia.org/wiki/Proxy\_re-
 7. Moxie sends ciphertext 2 to Zorban (or to MegaCorp who forwards it to Zorban).
 8. Zorban uses his private key to decrypt ciphertext 2, getting the original un-encrypted data.
 
-
 **Note**
 
 * The proxy only ever sees ciphertext. They never see any un-encrypted data.
 * Zorban never got the ability to decrypt ciphertext 1, i.e. the on-chain data.
 * There are variations on the above flow.
-
 
 ### System Example 3
 
@@ -121,4 +113,4 @@ This setup could be used in an enterprise blockchain scenario where a special no
 * A Planetmint end user finds out the X25519 public key (encryption key) of the special node.
 * The end user creates a valid Planetmint transaction, with either the asset.data or the metadata (or both) encrypted using the above-mentioned public key.
 * This is only done for transactions where the contents of asset.data or metadata don’t matter for validation, so all node operators can validate the transaction.
-* The special node is able to decrypt the encrypted data, but the other node operators can’t, and nor can any other end user. 
+* The special node is able to decrypt the encrypted data, but the other node operators can’t, and nor can any other end user.
