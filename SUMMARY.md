@@ -6,6 +6,7 @@
   * [Properties of Planetmint](introduction/properties.md)
   * [Quickstart](introduction/quickstart.md)
 * [Using Planetmint](using-planetmint/README.md)
+  * [Zenroom Smart Contracts & Policies](using-planetmint/zenroom-smart-contracts-and-policies.md)
 * [Node Setup](node-setup/README.md)
   * [Basic AWS Setup](node-setup/aws-setup.md)
     *
